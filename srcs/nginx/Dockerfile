@@ -2,7 +2,7 @@ FROM	alpine:3.12
 
 RUN		apk update && apk upgrade
 
-RUN		apk add nginx openssl openrc bash vim
+RUN		apk add nginx openssl
 RUN 	mkdir -p /run/nginx
 #RUN		rm /etc/nginx/conf.d/default.conf
 COPY	./nginx.conf /etc/nginx/conf.d/default.conf
