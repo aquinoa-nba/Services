@@ -1,11 +1,10 @@
-openrc default
-mysql_install_db
+openrc
+touch /run/openrc/softlevel
 
-rc-service mariadb start
-
+/etc/init.d/telegraf start
+/etc/init.d/mariadb setup
+/etc/init.d/mariadb start
 mysql < create_db.sql
 mysql wordpress_db < mysql-service.sql
-
-rc-service mariadb stop
-
-/usr/bin/mysqld --datadir=/var/lib/mysql
+sh usr/share/mariadb/mysql.server start
+tail -f /dev/null

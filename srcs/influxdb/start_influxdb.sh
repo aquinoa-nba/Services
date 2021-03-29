@@ -2,5 +2,4 @@ openrc
 touch /run/openrc/softlevel
 
 /etc/init.d/telegraf start
-
-nginx -g "daemon off;"
+/usr/sbin/influxd -config /etc/influxdb.conf

@@ -37,5 +37,12 @@ spec:
         image: nginx-image
         imagePullPolicy: Never
         ports:
-        - containerPort: 80
-        - containerPort: 443
+          - containerPort: 80
+          - containerPort: 443
+        livenessProbe:
+          exec:
+            command:
+              - sh
+              - /check.sh
+          initialDelaySeconds: 30
+          periodSeconds: 10

@@ -3,4 +3,4 @@ touch /run/openrc/softlevel
 
 /etc/init.d/telegraf start
 
-nginx -g "daemon off;"
+/usr/sbin/vsftpd /etc/vsftpd/vsftpd.conf
